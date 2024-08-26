@@ -1,3 +1,4 @@
+from datetime import date
 from masks import get_mask_card_number
 
 
@@ -20,4 +21,6 @@ def get_date(date_: str) -> str:
     Возвращает <ДД.ММ.ГГГГ>
     """
 
-    return f"{date_[8:10]}.{date_[5:7]}.{date_[0:4]}"
+    corrected_date = date(int(date_[0:4]), int(date_[5:7]), int(date_[8:10]))
+    return "{}.{}.{}".format(corrected_date.day, corrected_date.month, corrected_date.year)
+    # return f"{date_[8:10]}.{date_[5:7]}.{date_[0:4]}"  прошлое решение
