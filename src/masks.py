@@ -1,6 +1,9 @@
 def get_mask_card_number(number_card: str) -> str:
     """принимает номер карты и возвращает ее маску, вне зависимости от длины номера карты"""
 
+    if number_card == '':
+        return ''
+
     if not number_card.isdigit():
         return 'некорректные данные'
 
