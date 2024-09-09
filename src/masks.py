@@ -21,5 +21,11 @@ def get_mask_card_number(number_card: str) -> str:
 def get_mask_account(account_number: str) -> str:
     """принимает номер счета и возвращает его маску"""
 
+    if account_number == '':
+        return ''
+
+    if not account_number.isdigit():
+        return 'некорректные данные'
+
     mask_account = f"**{account_number[-4:]}"
     return mask_account
