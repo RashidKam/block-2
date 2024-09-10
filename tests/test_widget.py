@@ -15,8 +15,15 @@ def test_mask_account_card(input_data, mask_data):
 
 @pytest.mark.parametrize('date_, corrected_date',
                          [('', ''),
-                          ('2024-03-11T02:26:18.671407', '11.03.2024'),
-                          ('2024-03-11', '11.03.2024'),
-                          ('20-03-11T02:26:18.671407', '11.03.20')])
+                          ('2024-03-11T02:26:18.671407', '11.3.2024'),
+                          ('2024-03-11', '11.3.2024'),
+                          ('2024/03/11T02:26:18.671407', '11.3.2024')
+                          ])
 def test_get_date(date_, corrected_date):
     assert get_date(date_) == corrected_date
+
+
+def test_error_get_date():
+    with pytest.raises(ValueError):
+        get_date('20-03-11T02:26:18.671407')
+        get_date('date-20-03-11T02:26:18.671407')
