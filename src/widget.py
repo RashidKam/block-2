@@ -6,8 +6,8 @@ from src.masks import get_mask_card_number
 def mask_account_card(account_card: str) -> str:
     """Принимает тип и номер карты или счета, а возвращает их замаскированными"""
 
-    if account_card == '':
-        return ''
+    if account_card == "":
+        return ""
 
     elif account_card[-20:].isdigit():
         return f"{account_card[:-20]}**{account_card[-4:]}"  # проверка на соответствие счета
@@ -25,8 +25,8 @@ def get_date(date_: str) -> str:
     Возвращает <ДД.ММ.ГГГГ>
     """
 
-    if date_ == '':
-        return ''
+    if date_ == "":
+        return ""
 
     corrected_date = date(int(date_[0:4]), int(date_[5:7]), int(date_[8:10]))
     return "{}.{}.{}".format(corrected_date.day, corrected_date.month, corrected_date.year)

@@ -1,11 +1,11 @@
 def get_mask_card_number(number_card: str) -> str:
     """принимает номер карты и возвращает ее маску, вне зависимости от длины номера карты"""
 
-    if number_card == '':
-        return ''
+    if number_card == "":
+        return ""
 
     if not number_card.isdigit():
-        return 'некорректные данные'
+        return "некорректные данные"
 
     number_card_list = list(number_card)  # перевод номера карты из типа строка в тип список
 
@@ -21,11 +21,11 @@ def get_mask_card_number(number_card: str) -> str:
 def get_mask_account(account_number: str) -> str:
     """принимает номер счета и возвращает его маску"""
 
-    if account_number == '':
-        return ''
+    if account_number == "":
+        return ""
 
     if not account_number.isdigit():
-        return 'некорректные данные'
+        return "некорректные данные"
 
     mask_account = f"**{account_number[-4:]}"
     return mask_account
