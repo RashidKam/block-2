@@ -1,7 +1,7 @@
 from datetime import date
 
 
-def filter_by_state(list_of_data: list[dict], state:str="EXECUTED") -> list[dict]:
+def filter_by_state(list_of_data: list[dict], state: str = "EXECUTED") -> list[dict]:
     '''Функция принимает список словарей и возвращает новый список со словарями
     у которых значение по ключу "state" равно "EXECUTED"'''
 
