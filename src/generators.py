@@ -1,4 +1,5 @@
 from src.masks import card_number
+from typing import Iterable
 
 
 def filter_by_currency(list_of_transactions: list[dict], currency: str = None) -> GeneratorExit:
