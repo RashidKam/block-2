@@ -1,17 +1,19 @@
+from typing import Any, Iterable
+
 from src.masks import card_number
-from typing import Iterable, Any
 
 
-def filter_by_currency(list_of_transactions: list[dict], currency: str = None) -> Iterable[Any]:
+def filter_by_currency(list_of_transactions: list[dict], currency: str = "") -> Iterable[Any]:
     """
-    функци принимает на вход список транзакции и возвращает итератор, который поочередно выдает транзакции, где валюта операции соответствует заданной.
+    функци принимает на вход список транзакции и возвращает итератор, который поочередно выдает транзакции,
+    где валюта операции соответствует заданной.
     Если валюта не заданаб вернёт весь список транзакций.
     :param list_of_transactions: список транзакций в виде списка словарей
     :param currency: заданная валюта транзакции
     :return: итератор транзакция заданной валютыcle
     """
     for transaction in list_of_transactions:
-        if currency == None:
+        if currency == "":
             yield transaction
         elif currency.lower() == transaction["operationAmount"]["currency"]["code"].lower():
             yield transaction
