@@ -29,7 +29,8 @@ build-backend = "poetry.core.masonry.api"
 warn_return_any = true
 warn_unreachable = true
 disallow_untyped_defs = true
-exclude = 'venv'
+no_implicit_optional = true
+exclude = ['venv', 'tests']
 
 [tool.black]
 line-length = 119
