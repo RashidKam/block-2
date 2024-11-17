@@ -6,6 +6,8 @@ authors = ["Kamalutdinov_Rashid <kamalutdinov.r.r@yandex.ru>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+requests = "^2.32.3"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
 
@@ -30,7 +32,7 @@ warn_return_any = true
 warn_unreachable = true
 disallow_untyped_defs = true
 no_implicit_optional = true
-exclude = ['venv', 'tests']
+exclude = ['venv', 'tests', 'draft']
 
 [tool.black]
 line-length = 119
